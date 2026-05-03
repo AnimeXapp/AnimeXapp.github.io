@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AnimeX — Plataforma de streaming de anime con descargas offline, sin anuncios agresivos.">
+    <meta name="theme-color" content="#0D0D12">
+    <title>AnimeX — Streaming de anime sin anuncios agresivos</title>
+    <link rel="icon" type="image/png" href="assets/icono.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ─────── Header ─────── -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#hero" class="logo">
+                <img src="assets/icono.png" alt="AnimeX" class="logo-icon">
+                <span class="logo-text">Anime<span class="logo-x">X</span></span>
+            </a>
+            <nav class="nav">
+                <a href="#features">Características</a>
+                <a href="#install">Instalar</a>
+                <a href="#download" class="nav-cta">Descargar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ─────── Hero ─────── -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <img src="assets/animex-logo.png" alt="AnimeX" class="hero-logo">
+            <p class="hero-tagline">
+                Tu plataforma de anime: streaming directo, descargas offline,
+                sin anuncios agresivos.
+            </p>
+            <div class="hero-version">
+                <span id="version-tag">cargando…</span>
+            </div>
+            <a id="download-btn" href="#" class="btn-primary btn-lg" download>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
+                </svg>
+                Descargar APK
+            </a>
+            <p class="hero-meta" id="release-notes-preview">
+                Ultima versión disponible
+            </p>
+        </div>
+    </section>
+
+    <!-- ─────── Features ─────── -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Características</h2>
+            <p class="section-subtitle">Todo lo que necesitas para ver anime sin interrupciones.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">▶</div>
+                    <h3>Streaming directo</h3>
+                    <p>Reproduce desde múltiples servidores sin redirecciones ni anuncios molestos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⬇</div>
+                    <h3>Descargas offline</h3>
+                    <p>Descarga episodios para verlos sin internet. Almacenamiento local seguro.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏭</div>
+                    <h3>Omitir intros</h3>
+                    <p>Detección automática de openings y endings con AniSkip para una experiencia fluida.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">▶</div>
+                    <h3>Continuar viendo</h3>
+                    <p>Retoma cualquier episodio justo donde lo dejaste, en todos tus dispositivos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Listas personales</h3>
+                    <p>Mi lista, Favoritos e Historial sincronizados en la nube.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌙</div>
+                    <h3>Diseño nocturno</h3>
+                    <p>Interfaz oscura optimizada para maratones largos sin cansar la vista.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────── Install ─────── -->
+    <section id="install" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">¿Cómo instalar?</h2>
+            <p class="section-subtitle">3 pasos simples para tener AnimeX en tu Android.</p>
+
+            <ol class="install-steps">
+                <li>
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <h3>Descarga el APK</h3>
+                        <p>Toca el botón "Descargar APK" arriba. El archivo se guardará en la carpeta de descargas de tu teléfono.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <h3>Permite orígenes desconocidos</h3>
+                        <p>Android te pedirá permitir la instalación de orígenes desconocidos. Aprueba el permiso solo para esta app.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <h3>Instala y disfruta</h3>
+                        <p>Toca el APK descargado, confirma la instalación, abre AnimeX y comienza a ver anime al instante.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="install-cta">
+                <a id="download-btn-2" href="#" class="btn-primary" download>Descargar AnimeX</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────── Credits ─────── -->
+    <section id="credits" class="section">
+        <div class="container">
+            <h2 class="section-title">Créditos</h2>
+            <p class="section-subtitle">Hecho posible gracias a estas contribuciones open-source.</p>
+
+            <div class="credits-grid">
+                <div class="credit-card">
+                    <h3>Fernando Pacheco Cano</h3>
+                    <p class="credit-role">Creador de AnimeX</p>
+                    <p>Desarrollo completo de la app: UI, módulos, frontend y backend.</p>
+                    <a href="https://www.facebook.com/hikary.pacheko" target="_blank" rel="noopener" class="credit-link">Facebook ↗</a>
+                </div>
+                <div class="credit-card">
+                    <h3>FxxMorgan</h3>
+                    <p class="credit-role">Motor de scraping y descargas</p>
+                    <p>Anime1v API & Downloader Engine — la base open-source que da vida al catálogo.</p>
+                    <a href="https://github.com/FxxMorgan/" target="_blank" rel="noopener" class="credit-link">GitHub ↗</a>
+                </div>
+                <div class="credit-card">
+                    <h3>AniSkip</h3>
+                    <p class="credit-role">Detección de intros y endings</p>
+                    <p>API pública crowdsourced que provee timestamps exactos por anime.</p>
+                    <a href="https://aniskip.com" target="_blank" rel="noopener" class="credit-link">Sitio web ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────── Footer ─────── -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <img src="assets/icono.png" alt="AnimeX">
+                <span>AnimeX <span id="footer-version">v—</span></span>
+            </div>
+            <p class="footer-disclaimer">
+                AnimeX no aloja ningún contenido en sus servidores.
+                Es solo un cliente que consume APIs y fuentes públicas.
+                Todos los derechos pertenecen a sus respectivos autores y estudios.
+            </p>
+            <p class="footer-copy">
+                © 2026 AnimeX — Hecho con ❤ para la comunidad otaku
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

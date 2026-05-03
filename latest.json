@@ -1,0 +1,8 @@
+{
+    "version": "1.0.0",
+    "build_number": 1,
+    "url": "animex-1.0.0.apk",
+    "release_notes": "Primera versión pública de AnimeX. Streaming, descargas, AniSkip integrado y mucho más.",
+    "released_at": "2026-05-02",
+    "required": false
+}
