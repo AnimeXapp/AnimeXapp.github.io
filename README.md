@@ -3,8 +3,8 @@
 Sitio estático que sirve como punto de descarga del APK de AnimeX y como
 manifest fuente para el auto-updater de la app.
 
-**URL pública:** `https://imaginariagroup.github.io/animex.github.io/`
-**Repo:** `https://github.com/ImaginariaGroup/animex.github.io`
+**URL pública:** `https://animexapp.github.io/`
+**Repo:** `https://github.com/AnimeXapp/AnimeXapp.github.io`
 
 ## Estructura
 
@@ -18,37 +18,12 @@ web/
 └── releases/       ← aquí van los APK firmados (animex-X.Y.Z.apk)
 ```
 
-## Despliegue inicial — paso a paso
+## Activar GitHub Pages (primera vez)
 
-Ya tienes el repo creado. Solo falta subir los archivos.
-
-### Desde la raíz del proyecto AnimeX, abre PowerShell y ejecuta:
-
-```powershell
-# 1. Ir a la carpeta web
-cd web
-
-# 2. Inicializar git
-git init
-git branch -M main
-
-# 3. Conectar al repo remoto
-git remote add origin https://github.com/ImaginariaGroup/animex.github.io.git
-
-# 4. Commit + push inicial
-git add .
-git commit -m "feat: landing page inicial v1.0.0"
-git push -u origin main --force
-```
-
-> **Nota:** `--force` se usa solo en el push inicial para sobrescribir si el repo ya tiene un README de GitHub. Después no usar `--force`.
-
-### Activar GitHub Pages
-
-1. Ir a **https://github.com/ImaginariaGroup/animex.github.io/settings/pages**
+1. Ir a **https://github.com/AnimeXapp/AnimeXapp.github.io/settings/pages**
 2. **Source**: Branch `main` / `(root)` → **Save**
 3. Esperar 1-2 minutos. La URL final será:
-   `https://imaginariagroup.github.io/animex.github.io/`
+   `https://animexapp.github.io/`
 
 ## Publicar una nueva versión
 
@@ -60,7 +35,7 @@ Cuando saques v1.1.0:
    ```
 
 2. Copiar `build/app/outputs/flutter-apk/app-release.apk` a
-   `web/releases/animex-1.1.0.apk` del repo de la landing.
+   `web/releases/animex-1.1.0.apk`.
 
 3. Editar `web/latest.json`:
    ```json
