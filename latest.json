@@ -1,8 +1,8 @@
 {
-    "version": "1.4.0",
-    "build_number": 5,
-    "url": "animex-1.4.0.apk",
-    "release_notes": "Novedades de la versión 1.4.0:\n\n• Nueva sección 'Horarios' con el calendario semanal de estrenos\n• Editar perfil: cambia tu nombre, foto y contraseña desde Configuración\n• Centro de notificaciones con badge de no leídas en el ícono de campana\n• Notificaciones push reales — recibe avisos aunque la app esté cerrada\n• El destacado del Home ahora rota diariamente entre los animes mejor calificados\n• Reorganización del Perfil: T&C, política y buscar actualizaciones más a la mano\n• Correcciones varias: navegación, abrir enlaces y mejor experiencia general",
+    "version": "1.4.1",
+    "build_number": 6,
+    "url": "animex-1.4.1.apk",
+    "release_notes": "Novedades de la versión 1.4.1:\n\n• Nueva sección 'Soporte' en tu Perfil — envía sugerencias o reporta errores directo a los desarrolladores\n• Indicador visible en el panel admin con métricas de usuarios en línea y total registrados\n• Bandeja de soporte para administradores con filtros (abiertos / resueltos)\n• Mejoras menores y estabilidad",
     "released_at": "2026-05-03",
     "required": false
 }
