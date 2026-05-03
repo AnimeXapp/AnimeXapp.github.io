@@ -1,8 +1,8 @@
 {
-    "version": "1.1.0",
-    "build_number": 2,
-    "url": "animex-1.1.0.apk",
-    "release_notes": "Versión 1.1.0: chequeo de actualizaciones cada 30 minutos. Prueba del flujo de auto-update.",
+    "version": "1.2.0",
+    "build_number": 3,
+    "url": "animex-1.2.0.apk",
+    "release_notes": "Versión 1.2.0: prueba del flujo de auto-update desde v1.1.0. Si lees esto, ¡el sistema funciona!",
     "released_at": "2026-05-03",
     "required": false
 }
