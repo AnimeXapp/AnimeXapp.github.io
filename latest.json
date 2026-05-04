@@ -1,8 +1,8 @@
 {
-    "version": "1.4.1",
-    "build_number": 6,
-    "url": "animex-1.4.1.apk",
-    "release_notes": "Novedades de la versión 1.4.1:\n\n• Nueva sección 'Soporte' en tu Perfil — envía sugerencias o reporta errores directo a los desarrolladores\n• Indicador visible en el panel admin con métricas de usuarios en línea y total registrados\n• Bandeja de soporte para administradores con filtros (abiertos / resueltos)\n• Mejoras menores y estabilidad",
-    "released_at": "2026-05-03",
+    "version": "1.4.2",
+    "build_number": 7,
+    "url": "animex-1.4.2.apk",
+    "release_notes": "Novedades de la versión 1.4.2:\n\n• Si las notificaciones del sistema están desactivadas, la app ahora te muestra un aviso al abrirla con un atajo directo a Configuración\n• Solución para usuarios que actualizaron desde versiones anteriores y no recibían notificaciones push\n• El aviso aparece una sola vez por versión: no será molesto",
+    "released_at": "2026-05-04",
     "required": false
 }
