@@ -122,11 +122,11 @@ img { max-width: 100%; display: block; }
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('assets/animex-fondo.png');
+    background-image: url('assets/animex-fondo.webp');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: blur(2px) brightness(0.7);
-    transform: scale(1.05);
+    filter: blur(12px) brightness(0.5);
 }
 
 .hero-overlay {
