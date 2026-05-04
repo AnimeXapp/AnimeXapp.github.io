@@ -81,10 +81,10 @@ function setSuccess(data) {
 
 (async function loadLatestVersion() {
     try {
-        // Cache buster con timestamp para que GitHub Pages CDN no sirva versiones viejas.
-        const cacheBuster = `?t=${Date.now()}`;
-        const response = await fetch(`latest.json${cacheBuster}`, { 
-            cache: 'no-cache',
+        
+        const response = await fetch('latest.json', { 
+            
+            cache: 'default',
             headers: {
                 'Accept': 'application/json'
             }
@@ -111,8 +111,6 @@ function setSuccess(data) {
 
 // ────────────────────────────────────────────────────────────
 // Smooth Scroll Animations
-// ────────────────────────────────────────────────────────────
-
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -146,51 +144,39 @@ document.addEventListener('DOMContentLoaded', () => {
 // Navigation Active State
 // ────────────────────────────────────────────────────────────
 
-window.addEventListener('scroll', () => {
-    const navLinks = document.querySelectorAll('.nav a:not(.nav-cta)');
-    
+const navLinks = Array.from(document.querySelectorAll('.nav a:not(.nav-cta)'));
+let navTicking = false;
+
+function updateNavActive() {
+    const viewportY = 100;
     navLinks.forEach(link => {
-        const targetId = link.getAttribute('href').substring(1);
+        const href = link.getAttribute('href') || '';
+        if (!href.startsWith('#')) return;
+        const targetId = href.substring(1);
         const targetSection = document.getElementById(targetId);
-        
-        if (targetSection) {
-            const rect = targetSection.getBoundingClientRect();
-            if (rect.top <= 100 && rect.bottom >= 100) {
-                link.style.color = 'var(--text-primary)';
-            } else {
-                link.style.color = 'var(--text-secondary)';
-            }
+        if (!targetSection) return;
+
+        const rect = targetSection.getBoundingClientRect();
+        if (rect.top <= viewportY && rect.bottom >= viewportY) {
+            link.style.color = 'var(--text-primary)';
+        } else {
+            link.style.color = 'var(--text-secondary)';
         }
-    });
-});
-
-// ────────────────────────────────────────────────────────────
-// Performance: Lazy Loading Images
-// ────────────────────────────────────────────────────────────
-
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
     });
 }
 
-// ────────────────────────────────────────────────────────────
-// Accessibility: Focus Management
-// ────────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+    if (!navTicking) {
+        navTicking = true;
+        requestAnimationFrame(() => {
+            updateNavActive();
+            navTicking = false;
+        });
+    }
+}, { passive: true });
+
 
 document.addEventListener('keydown', (e) => {
-    // Skip to main content with keyboard shortcut
     if (e.altKey && e.key === 'm') {
         const mainContent = document.querySelector('main') || document.getElementById('hero');
         if (mainContent) mainContent.focus();
