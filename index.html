@@ -4,118 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AnimeX — Plataforma de streaming de anime con descargas offline, sin anuncios agresivos.">
-    <meta name="theme-color" content="#0D0D12">
+    <meta name="theme-color" content="#0A0A0F">
+    <meta name="color-scheme" content="dark light">
     <title>AnimeX — Streaming de anime sin anuncios agresivos</title>
     <link rel="icon" href="assets/icono.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- ─────── Header ─────── -->
-    <header class="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">
-                
-                <image src="assets/animex-logo.webp" alt="AnimeX">
+    <header class="header" role="banner">
+        <div class="header-inner">
+            <a href="/" class="logo" title="AnimeX - Inicio">
+                <span>Anime<span class="logo-x">X</span></span>
             </a>
-            <nav class="nav">
-                <a href="#features">Características</a>
-                <a href="#install">Instalar</a>
-                <a href="#download" class="nav-cta">Descargar</a>
+            <nav class="nav" role="navigation" aria-label="Navegación principal">
+                <a href="#features" aria-label="Ver características">Características</a>
+                <a href="#install" aria-label="Cómo instalar">Instalar</a>
+                <a href="#download" class="nav-cta" role="button" aria-label="Descargar APK de AnimeX">Descargar</a>
             </nav>
         </div>
     </header>
 
     <!-- ─────── Hero ─────── -->
-    <section id="hero" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
+    <section id="hero" class="hero" role="main" aria-label="Sección principal">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        
         <div class="container hero-content">
-            <img src="assets/ANIMEX.webp" alt="AnimeX" class="hero-logo">
-            <p class="hero-tagline">
-                Tu plataforma de anime: streaming directo, descargas offline,
-                sin anuncios agresivos.
-            </p>
-            <div class="hero-version">
-                <span id="version-tag">cargando…</span>
-            </div>
-            <a id="download-btn" href="#" class="btn-primary btn-lg" download>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"> 
+            <img src="assets/ANIMEX.webp" alt="AnimeX - Logotipo Principal" class="hero-logo">
+            <h1 class="hero-tagline">
+                Tu plataforma de anime: streaming directo, descargas offline, sin anuncios agresivos.
+            </h1>
+        
+            <a id="download-btn" href="#" class="btn-primary btn-lg" download aria-label="Descargar aplicación APK">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"> 
                     <path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/>
                 </svg>
                 Descargar APK
             </a>
-            <p class="hero-meta" id="release-notes-preview">
-                Ultima versión disponible
+            <br>
+            <div class="hero-version" role="status" aria-live="polite">
+                <span id="version-tag" aria-label="Versión actual">cargando…</span>
+            </div>
+            <p class="hero-meta" id="release-notes-preview" aria-label="Información de la versión">
+                Última versión disponible
             </p>
         </div>
     </section>
 
     <!-- ─────── Features ─────── -->
-    <section id="features" class="section">
+    <section id="features" class="section" role="region" aria-labelledby="features-title">
         <div class="container">
-            <h2 class="section-title">Características</h2>
+            <h2 class="section-title" id="features-title">Características</h2>
             <p class="section-subtitle">Todo lo que necesitas para ver anime sin interrupciones.</p>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">▶</div>
+            <div class="features-grid" role="list">
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">▶</div>
                     <h3>Streaming directo</h3>
                     <p>Reproduce desde múltiples servidores sin redirecciones ni anuncios molestos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⬇</div>
+                </article>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">⬇</div>
                     <h3>Descargas offline</h3>
                     <p>Descarga episodios para verlos sin internet. Almacenamiento local seguro.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⏭</div>
+                </article>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">⏭</div>
                     <h3>Omitir intros</h3>
                     <p>Detección automática de openings y endings con AniSkip para una experiencia fluida.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">▶</div>
+                </article>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">▶</div>
                     <h3>Continuar viendo</h3>
                     <p>Retoma cualquier episodio justo donde lo dejaste, en todos tus dispositivos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">★</div>
+                </article>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">★</div>
                     <h3>Listas personales</h3>
                     <p>Mi lista, Favoritos e Historial sincronizados en la nube.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌙</div>
+                </article>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">🌙</div>
                     <h3>Diseño nocturno</h3>
                     <p>Interfaz oscura optimizada para maratones largos sin cansar la vista.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ─────── Install ─────── -->
-    <section id="install" class="section section-alt">
+    <section id="install" class="section section-alt" role="region" aria-labelledby="install-title">
         <div class="container">
-            <h2 class="section-title">¿Cómo instalar?</h2>
+            <h2 class="section-title" id="install-title">¿Cómo instalar?</h2>
             <p class="section-subtitle">3 pasos simples para tener AnimeX en tu Android.</p>
 
-            <ol class="install-steps">
-                <li>
-                    <div class="step-num">1</div>
+            <ol class="install-steps" role="list">
+                <li role="listitem">
+                    <div class="step-num" aria-label="Paso 1">1</div>
                     <div class="step-body">
                         <h3>Descarga el APK</h3>
                         <p>Toca el botón "Descargar APK" arriba. El archivo se guardará en la carpeta de descargas de tu teléfono.</p>
                     </div>
                 </li>
-                <li>
-                    <div class="step-num">2</div>
+                <li role="listitem">
+                    <div class="step-num" aria-label="Paso 2">2</div>
                     <div class="step-body">
                         <h3>Permite orígenes desconocidos</h3>
                         <p>Android te pedirá permitir la instalación de orígenes desconocidos. Aprueba el permiso solo para esta app.</p>
                     </div>
                 </li>
-                <li>
-                    <div class="step-num">3</div>
+                <li role="listitem">
+                    <div class="step-num" aria-label="Paso 3">3</div>
                     <div class="step-body">
                         <h3>Instala y disfruta</h3>
                         <p>Toca el APK descargado, confirma la instalación, abre AnimeX y comienza a ver anime al instante.</p>
@@ -124,46 +126,51 @@
             </ol>
 
             <div class="install-cta">
-                <a id="download-btn-2" href="#" class="btn-primary" download>Descargar AnimeX</a>
+                <a id="download-btn-2" href="#" class="btn-primary" download aria-label="Descargar AnimeX ahora">Descargar AnimeX</a>
             </div>
         </div>
     </section>
 
     <!-- ─────── Credits ─────── -->
-    <section id="credits" class="section">
+    <section id="credits" class="section" role="region" aria-labelledby="credits-title">
         <div class="container">
-            <h2 class="section-title">Créditos</h2>
+            <h2 class="section-title" id="credits-title">Créditos</h2>
             <p class="section-subtitle">Hecho posible gracias a estas contribuciones open-source.</p>
 
-            <div class="credits-grid">
-                <div class="credit-card">
+            <div class="credits-grid" role="list">
+                <article class="credit-card" role="listitem">
                     <h3>Fernando Pacheco Cano</h3>
                     <p class="credit-role">Creador de AnimeX</p>
-                    <p>Desarrollo de la app, correcciones y modificaciones.</p>
-                    <p>Trabajo conjunto con IA</p>
-                    <a href="https://www.facebook.com/hikary.pacheko" target="_blank" rel="noopener" class="credit-link">Facebook ↗</a>
-                </div>
-                <div class="credit-card">
+                    <p>Desarrollo de la app, correcciones y modificaciones. Trabajo conjunto con IA.</p>
+                    <a href="https://www.facebook.com/hikary.pacheko" target="_blank" rel="noopener noreferrer" class="credit-link">Facebook ↗</a>
+                </article>
+                <article class="credit-card" role="listitem">
                     <h3>FxxMorgan</h3>
                     <p class="credit-role">Motor de scraping y descargas</p>
                     <p>Anime1v API & Downloader Engine — la base open-source que da vida al catálogo.</p>
-                    <a href="https://github.com/FxxMorgan/" target="_blank" rel="noopener" class="credit-link">GitHub ↗</a>
-                </div>
-                <div class="credit-card">
+                    <a href="https://github.com/FxxMorgan/" target="_blank" rel="noopener noreferrer" class="credit-link">GitHub ↗</a>
+                </article>
+                <article class="credit-card" role="listitem">
                     <h3>AniSkip</h3>
                     <p class="credit-role">Detección de intros y endings</p>
                     <p>API pública crowdsourced que provee timestamps exactos por anime.</p>
-                    <a href="https://aniskip.com" target="_blank" rel="noopener" class="credit-link">Sitio web ↗</a>
-                </div>
+                    <a href="https://aniskip.com" target="_blank" rel="noopener noreferrer" class="credit-link">Sitio web ↗</a>
+                </article>
+                <article class="credit-card" role="listitem">
+                    <h3>LuisGeore99</h3>
+                    <p class="credit-role">Desarrollador web</p>
+                    <p>Full Stack — Java, SpringBoot, Angular, React, Tailwind CSS</p>
+                    <a href="https://github.com/LuisGeorge99" target="_blank" rel="noopener noreferrer" class="credit-link">GitHub ↗</a>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ─────── Footer ─────── -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container footer-inner">
             <div class="footer-brand">
-                <img src="assets/icono.ico" alt="AnimeX">
+                <img src="assets/icono.ico" alt="AnimeX" class="footer-logo">
                 <span>AnimeX <span id="footer-version">v—</span></span>
             </div>
             <p class="footer-disclaimer">
