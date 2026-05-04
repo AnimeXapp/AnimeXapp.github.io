@@ -8,7 +8,24 @@
     <meta name="color-scheme" content="dark light">
     <title>AnimeX — Streaming de anime sin anuncios agresivos</title>
     <link rel="preload" as="image" href="assets/ANIMEX.webp" fetchpriority="high">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="assets/animex-fondo.webp">
+    <link rel="preload" href="styles.min.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.min.css"></noscript>
+    <style>
+        html,body{height:100%;margin:0}
+        body{background:#0A0A0F;color:#fff;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        .header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.7);border-bottom:1px solid rgba(123,45,255,0.1)}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;height:70px;padding:0 24px}
+        .logo{font-weight:700;font-size:18px}
+        .nav{display:flex;gap:24px}
+        .hero{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:80px 24px;text-align:center}
+        .hero-bg{position:absolute;inset:0;background-image:url('assets/animex-fondo.webp');background-repeat:no-repeat;background-size:cover;background-position:center;filter:blur(6px) brightness(0.35);will-change:transform}
+        .hero-content{position:relative;z-index:1;max-width:900px}
+        .hero-logo{max-width:420px;width:90%;margin:0 auto 32px;display:block}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -170,7 +187,7 @@
     <footer class="footer" role="contentinfo">
         <div class="container footer-inner">
             <div class="footer-brand">
-                <img src="assets/icono.ico" alt="AnimeX" class="footer-logo">
+                <img src="assets/icono.ico" alt="AnimeX" class="footer-logo" loading="lazy">
                 <span>AnimeX <span id="footer-version">v—</span></span>
             </div>
             <p class="footer-disclaimer">
@@ -184,6 +201,19 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <!-- Load minified script for production, fallback to unminified if missing -->
+    <script>
+        (function(){
+            var s = document.createElement('script');
+            s.src = 'script.min.js';
+            s.defer = true;
+            s.onload = function(){};
+            s.onerror = function(){
+                var f = document.createElement('script');
+                f.src = 'script.js'; f.defer = true; document.head.appendChild(f);
+            };
+            document.head.appendChild(s);
+        })();
+    </script>
 </body>
 </html>

@@ -91,8 +91,9 @@ img {
     top: 0;
     z-index: 100;
     background: rgba(10, 10, 15, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    /* Reduced blur to improve rendering performance */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(123, 45, 255, 0.1);
     transition: all var(--transition-base);
     will-change: transform;
@@ -247,8 +248,9 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: blur(20px) brightness(0.35) saturate(1.2);
-    animation: zoomBg 20s ease-in-out infinite;
+    /* Reduce blur and slow down background zoom to lower paint cost */
+    filter: blur(6px) brightness(0.35) saturate(1.2);
+    animation: zoomBg 60s ease-in-out infinite;
     will-change: transform;
 }
 
@@ -429,7 +431,7 @@ img {
 }
 
 .btn-primary:hover svg {
-    animation: bounce 0.6s infinite ease-in-out;
+    animation: bounce 0.6s ease-in-out 1;
 }
 
 @keyframes bounce {
