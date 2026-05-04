@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#0A0A0F">
     <meta name="color-scheme" content="dark light">
     <title>AnimeX — Streaming de anime sin anuncios agresivos</title>
-    <link rel="icon" href="assets/icono.ico" type="image/x-icon">
+    <link rel="preload" as="image" href="assets/ANIMEX.webp" fetchpriority="high">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -33,7 +33,7 @@
         <div class="hero-overlay" aria-hidden="true"></div>
         
         <div class="container hero-content">
-            <img src="assets/ANIMEX.webp" alt="AnimeX - Logotipo Principal" class="hero-logo">
+            <img src="assets/ANIMEX.webp" alt="AnimeX - Logotipo Principal" class="hero-logo" width="600" height="236" fetchpriority="high">
             <h1 class="hero-tagline">
                 Tu plataforma de anime: streaming directo, descargas offline, sin anuncios agresivos.
             </h1>
@@ -184,6 +184,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
