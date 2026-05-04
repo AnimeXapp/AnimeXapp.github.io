@@ -1,8 +1,8 @@
 {
-    "version": "1.4.2",
-    "build_number": 7,
-    "url": "animex-1.4.2.apk",
-    "release_notes": "Novedades de la versión 1.4.2:\n\n• Si las notificaciones del sistema están desactivadas, la app ahora te muestra un aviso al abrirla con un atajo directo a Configuración\n• Solución para usuarios que actualizaron desde versiones anteriores y no recibían notificaciones push\n• El aviso aparece una sola vez por versión: no será molesto",
+    "version": "1.5.0",
+    "build_number": 8,
+    "url": "animex-1.5.0.apk",
+    "release_notes": "Novedades de la versión 1.5.0:\n\n• Aviso \"Activa las notificaciones\" al iniciar — soluciona el problema de no recibir avisos tras actualizar\n• Sección Horarios rediseñada: los 7 días siempre visibles\n• Lista de capítulos con selector de rangos, buscador por número y botón Invertir — ideal para series largas\n• Reportes de soporte ahora aceptan adjuntar una foto del problema\n• Más servidores de video soportados (YourUpload, VOE)\n• Mejoras varias y correcciones internas",
     "released_at": "2026-05-04",
     "required": false
 }
