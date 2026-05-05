@@ -1,8 +1,8 @@
 {
-    "version": "1.5.0",
-    "build_number": 8,
-    "url": "animex-1.5.0.apk",
-    "release_notes": "Novedades de la versión 1.5.0:\n\n• Aviso \"Activa las notificaciones\" al iniciar — soluciona el problema de no recibir avisos tras actualizar\n• Sección Horarios rediseñada: los 7 días siempre visibles\n• Lista de capítulos con selector de rangos, buscador por número y botón Invertir — ideal para series largas\n• Reportes de soporte ahora aceptan adjuntar una foto del problema\n• Más servidores de video soportados (YourUpload, VOE)\n• Mejoras varias y correcciones internas",
-    "released_at": "2026-05-04",
+    "version": "1.6.0",
+    "build_number": 9,
+    "url": "animex-1.6.0.apk",
+    "release_notes": "Novedades de la versión 1.6.0:\n\n• Home renovado: saludo personalizado, secciones con íconos y barra gradient, glow en el banner Destacado\n• Top 10 estilo Netflix en la sección Tendencias\n• Banner Destacado con efecto parallax al hacer scroll\n• Cards de anime con sombra de color e indicadores: EN EMISIÓN (pulsante), CONCLUIDO, PRÓXIMAMENTE y tipo (TV / Película / OVA…)\n• Continuar viendo con barra de progreso en gradient morado-rosa\n• Sección Comentarios removida del detalle del anime — siguen disponibles dentro del reproductor\n• Mejoras visuales y correcciones internas",
+    "released_at": "2026-05-05",
     "required": false
 }
