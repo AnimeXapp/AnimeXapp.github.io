@@ -755,35 +755,6 @@ img {
     line-height: 1.5
 }
 
-.credit-link {
-    display: inline-block;
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 14px;
-    transition: all var(--transition-base);
-    position: relative;
-    text-decoration: none
-}
-
-.credit-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gradient-premium);
-    transition: width var(--transition-base)
-}
-
-.credit-link:hover {
-    color: var(--primary-soft);
-    transform: translateX(4px)
-}
-
-.credit-link:hover::after {
-    width: 100%
-}
 
 .footer {
     background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-elevated) 100%);
