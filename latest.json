@@ -1,8 +1,8 @@
 {
-    "version": "1.6.0",
-    "build_number": 9,
-    "url": "animex-1.6.0.apk",
-    "release_notes": "Novedades de la versión 1.6.0:\n\n• Home renovado: saludo personalizado, secciones con íconos y barra gradient, glow en el banner Destacado\n• Top 10 estilo Netflix en la sección Tendencias\n• Banner Destacado con efecto parallax al hacer scroll\n• Cards de anime con sombra de color e indicadores: EN EMISIÓN (pulsante), CONCLUIDO, PRÓXIMAMENTE y tipo (TV / Película / OVA…)\n• Continuar viendo con barra de progreso en gradient morado-rosa\n• Sección Comentarios removida del detalle del anime — siguen disponibles dentro del reproductor\n• Mejoras visuales y correcciones internas",
-    "released_at": "2026-05-05",
+    "version": "1.6.1",
+    "build_number": 10,
+    "url": "animex-1.6.1.apk",
+    "release_notes": "Novedades de la versión 1.6.1:\n\n🪙 XCoins (primera fase)\n• Nuevo chip 🪙 XC en el perfil junto al badge Premium\n• Ganas +2 XCoins por cada comentario válido (mínimo 10 caracteres, máx. 3 recompensas por minuto)\n• El balance se actualiza solo en tiempo real\n\n🔔 Notificaciones más limpias\n• Las de más de 12 horas se marcan como leídas automáticamente — el badge de la campana ya no acumula avisos viejos\n• Las de más de 7 días se borran solas\n• Corregido: notificaciones viejas que reaparecían como nuevas al abrir la app",
+    "released_at": "2026-05-06",
     "required": false
 }
