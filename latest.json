@@ -1,8 +1,8 @@
 {
-    "version": "1.6.2",
-    "build_number": 11,
-    "url": "animex-1.6.2.apk",
-    "release_notes": "Novedades de la versión 1.6.2:\n\n• Se realizaron correcciones internas",
+    "version": "1.7.0",
+    "build_number": 12,
+    "url": "animex-1.7.0.apk",
+    "release_notes": "Novedades de la versión 1.7.0:\n\n💬 Chat en vivo de la comunidad\n• Nueva pestaña Chat para conversar con otros fans en tiempo real\n• Saludo automático al entrar y contador de personas activas\n• Emojis personalizados de AnimeX\n• Etiqueta SPOILER: oculta el contenido hasta que el lector lo desbloquee\n• Reglas del chat siempre a la vista\n• Detección de spam para mantener la conversación limpia\n\n📺 Pestaña Temporadas en cada anime\n• Mira la franquicia completa: precuelas, secuelas, OVAs y películas\n• Ordenadas cronológicamente\n\n🪙 XCoins ampliados\n• Ganas monedas también por participar en el chat\n• Sistema de niveles: Novato → Otaku → Senpai → Kage → Dios del Anime\n\n📨 Mensajes privados del administrador\n• Avisos importantes llegan como notificación + dialog dedicado\n\n🔧 Mejoras y correcciones internas",
     "released_at": "2026-05-06",
     "required": false
 }
