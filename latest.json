@@ -1,8 +1,8 @@
 {
-    "version": "1.7.0",
-    "build_number": 12,
-    "url": "animex-1.7.0.apk",
-    "release_notes": "Novedades de la versión 1.7.0:\n\n💬 Chat en vivo de la comunidad\n• Nueva pestaña Chat para conversar con otros fans en tiempo real\n• Saludo automático al entrar y contador de personas activas\n• Emojis personalizados de AnimeX\n• Etiqueta SPOILER: oculta el contenido hasta que el lector lo desbloquee\n• Reglas del chat siempre a la vista\n• Detección de spam para mantener la conversación limpia\n\n📺 Pestaña Temporadas en cada anime\n• Mira la franquicia completa: precuelas, secuelas, OVAs y películas\n• Ordenadas cronológicamente\n\n🪙 XCoins ampliados\n• Ganas monedas también por participar en el chat\n• Sistema de niveles: Novato → Otaku → Senpai → Kage → Dios del Anime\n\n📨 Mensajes privados del administrador\n• Avisos importantes llegan como notificación + dialog dedicado\n\n🔧 Mejoras y correcciones internas",
-    "released_at": "2026-05-06",
+    "version": "1.8.0",
+    "build_number": 13,
+    "url": "animex-1.8.0.apk",
+    "release_notes": "Novedades de la versión 1.8.0:\n\n🎬 Reproductor mejorado\n• El video ya no se pausa al entrar o salir de pantalla completa — la reproducción continúa fluida\n• Detección automática de rotación: gira el teléfono y el reproductor pasa a pantalla completa solo; vuelve a vertical y regresa al modo normal con comentarios y reacciones\n• El audio se corta de inmediato al salir del episodio (sin más \"audio fantasma\" en segundo plano)\n• La pantalla queda bloqueada en vertical en el resto de la app — solo el reproductor permite rotación\n• Al regresar a los detalles del anime el video se detiene correctamente\n\n🔧 Mejoras y correcciones internas",
+    "released_at": "2026-05-13",
     "required": false
 }
