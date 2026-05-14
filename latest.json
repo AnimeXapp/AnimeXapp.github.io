@@ -1,8 +1,8 @@
 {
-    "version": "1.8.0",
-    "build_number": 13,
-    "url": "animex-1.8.0.apk",
-    "release_notes": "Novedades de la versión 1.8.0:\n\n🎬 Reproductor mejorado\n• El video ya no se pausa al entrar o salir de pantalla completa — la reproducción continúa fluida\n• Detección automática de rotación: gira el teléfono y el reproductor pasa a pantalla completa solo; vuelve a vertical y regresa al modo normal con comentarios y reacciones\n• El audio se corta de inmediato al salir del episodio (sin más \"audio fantasma\" en segundo plano)\n• La pantalla queda bloqueada en vertical en el resto de la app — solo el reproductor permite rotación\n• Al regresar a los detalles del anime el video se detiene correctamente\n\n🔧 Mejoras y correcciones internas",
+    "version": "1.9.0",
+    "build_number": 14,
+    "url": "animex-1.9.0.apk",
+    "release_notes": "Novedades de la versión 1.9.0:\n\n✈️ Modo Offline\n• Nuevo toggle en Perfil para activar el modo sin conexión\n• Cuando está activo, no se usan tus datos móviles ni WiFi\n• Las pestañas que requieren internet quedan bloqueadas con un mensaje claro\n• Si la app detecta que perdiste señal, te sugiere activarlo automáticamente\n• Reproducción 100% offline para episodios descargados\n\n💬 Chat más interactivo\n• Sistema de respuestas: mantén presionado un mensaje para responder con cita\n• Reacciones a mensajes con emojis: ❤️ 🔥 👏 😮 😭 😂 👀 🤓\n• Ícono del Chat en el menú inferior se anima según la actividad — pulsa, brilla y muestra fuego cuando hay movimiento\n\n📥 Descargas mejoradas\n• Botón \"Descargar todos\" para bajar la serie completa de un toque\n• Selector previo de idioma: SUB (japonés con subtítulos) o DUB (doblado)\n• 3 descargas en simultáneo para usuarios normales, 10 para Premium / VIP / Staff\n• Las demás esperan en cola y arrancan automáticamente cuando se libera un slot\n• Soporte para descargar de servidores HLS (Zilla) además de PixelDrain y MP4Upload\n\n🔧 Mejoras y correcciones internas",
     "released_at": "2026-05-13",
     "required": false
 }
