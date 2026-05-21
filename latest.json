@@ -1,8 +1,8 @@
 {
-    "version": "1.9.0",
-    "build_number": 14,
-    "url": "animex-1.9.0.apk",
-    "release_notes": "Novedades de la versión 1.9.0:\n\n✈️ Modo Offline\n• Nuevo toggle en Perfil para activar el modo sin conexión\n• Cuando está activo, no se usan tus datos móviles ni WiFi\n• Las pestañas que requieren internet quedan bloqueadas con un mensaje claro\n• Si la app detecta que perdiste señal, te sugiere activarlo automáticamente\n• Reproducción 100% offline para episodios descargados\n\n💬 Chat más interactivo\n• Sistema de respuestas: mantén presionado un mensaje para responder con cita\n• Reacciones a mensajes con emojis: ❤️ 🔥 👏 😮 😭 😂 👀 🤓\n• Ícono del Chat en el menú inferior se anima según la actividad — pulsa, brilla y muestra fuego cuando hay movimiento\n\n📥 Descargas mejoradas\n• Botón \"Descargar todos\" para bajar la serie completa de un toque\n• Selector previo de idioma: SUB (japonés con subtítulos) o DUB (doblado)\n• 3 descargas en simultáneo para usuarios normales, 10 para Premium / VIP / Staff\n• Las demás esperan en cola y arrancan automáticamente cuando se libera un slot\n• Soporte para descargar de servidores HLS (Zilla) además de PixelDrain y MP4Upload\n\n🔧 Mejoras y correcciones internas",
-    "released_at": "2026-05-13",
+    "version": "1.9.1",
+    "build_number": 15,
+    "url": "animex-1.9.1.apk",
+    "release_notes": "Novedades de la versión 1.9.1:\n\n🗳️ Encuestas en posts del Centro\n• El admin puede agregar encuestas a cualquier post\n• Vota una vez y ve los resultados en tiempo real con barras animadas\n\n🎫 Sistema de Soporte renovado\n• Los reportes y sugerencias ahora son posts públicos en la sección Soporte\n• Todos los usuarios pueden ver y comentar tickets activos\n• Una vez resuelto, los comentarios se bloquean automáticamente\n\n🏷️ Badges de rol/nivel correctos\n• Cada post del Centro muestra el rol real del autor (Admin, Mod, Staff, VIP…)\n• Los usuarios normales muestran su nivel (Nv. X)\n\n🐛 Correcciones\n• Texto de las cards de anime ya no se desborda hacia abajo\n• Tab bar del detalle de anime ya no se sale de la pantalla\n• Avatar real del autor en posts y comentarios del Centro",
+    "released_at": "2026-05-20",
     "required": false
 }
