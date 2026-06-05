@@ -29,6 +29,7 @@ import {
   startAfter,
   where,
   serverTimestamp,
+  deleteField,
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 // ── CONFIG ────────────────────────────────────────────────────
@@ -78,29 +79,68 @@ function toast(msg, type = 'info') {
 }
 
 // ════════════════════════════════════════════════════════════════
-// MODAL DE CONFIRMACIÓN
+// MODALES (dinámicos — el box se renderiza en cada llamada)
 // ════════════════════════════════════════════════════════════════
+function _modal(html) {
+  const overlay = document.getElementById('modal');
+  overlay.querySelector('.modal-box').innerHTML = html;
+  overlay.hidden = false;
+  return overlay;
+}
+
 function showConfirm({ title, body }) {
   return new Promise(resolve => {
-    const overlay  = document.getElementById('modal');
-    const titleEl  = document.getElementById('modal-title');
-    const bodyEl   = document.getElementById('modal-body');
-    let cancelBtn  = document.getElementById('modal-cancel');
-    let confirmBtn = document.getElementById('modal-confirm');
+    _modal(`
+      <h3>${esc(title)}</h3>
+      <p>${esc(body)}</p>
+      <div class="modal-actions">
+        <button id="sc-cancel"  class="btn btn-secondary">Cancelar</button>
+        <button id="sc-confirm" class="btn btn-danger">Confirmar</button>
+      </div>
+    `);
+    const done = (ok) => { document.getElementById('modal').hidden = true; resolve(ok); };
+    document.getElementById('sc-cancel').onclick  = () => done(false);
+    document.getElementById('sc-confirm').onclick = () => done(true);
+  });
+}
 
-    titleEl.textContent = title;
-    bodyEl.textContent  = body;
-    overlay.hidden = false;
+function showDateModal({ title, subtitle }) {
+  return new Promise(resolve => {
+    const today = new Date().toISOString().split('T')[0];
+    _modal(`
+      <h3>${esc(title)}</h3>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:20px;line-height:1.5">${esc(subtitle)}</p>
+      <div class="form-group" style="margin-bottom:16px">
+        <label for="dm-date">Fecha de aportación</label>
+        <input type="date" id="dm-date" class="form-control" value="${today}" max="${today}">
+      </div>
+      <div style="padding:11px 14px;background:var(--bg);border-radius:8px;font-size:13px;margin-bottom:24px;color:var(--muted)">
+        Expirará el: <strong id="dm-expiry" style="color:var(--success)"></strong>
+      </div>
+      <div class="modal-actions">
+        <button id="dm-cancel"  class="btn btn-secondary">Cancelar</button>
+        <button id="dm-confirm" class="btn btn-primary" style="width:auto;padding:9px 24px">Asignar</button>
+      </div>
+    `);
 
-    // Clonar para limpiar listeners previos
-    const newCancel  = cancelBtn.cloneNode(true);
-    const newConfirm = confirmBtn.cloneNode(true);
-    cancelBtn.replaceWith(newCancel);
-    confirmBtn.replaceWith(newConfirm);
+    const dateInput  = document.getElementById('dm-date');
+    const expirySpan = document.getElementById('dm-expiry');
 
-    const done = (ok) => { overlay.hidden = true; resolve(ok); };
-    newCancel.onclick  = () => done(false);
-    newConfirm.onclick = () => done(true);
+    const updatePreview = () => {
+      if (!dateInput.value) return;
+      const d = new Date(dateInput.value + 'T12:00:00');
+      d.setMonth(d.getMonth() + 1);
+      expirySpan.textContent = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'numeric' });
+    };
+    dateInput.addEventListener('input', updatePreview);
+    updatePreview();
+
+    const close = (val) => { document.getElementById('modal').hidden = true; resolve(val); };
+    document.getElementById('dm-cancel').onclick  = () => close(null);
+    document.getElementById('dm-confirm').onclick = () => {
+      if (!dateInput.value) return;
+      close(dateInput.value);
+    };
   });
 }
 
@@ -234,11 +274,12 @@ async function renderUsers() {
               <th>Premium</th>
               <th>Shadow ban</th>
               <th>XCoins</th>
+              <th>Vence</th>
               <th>Último acceso</th>
             </tr>
           </thead>
           <tbody id="users-tbody">
-            <tr><td colspan="6" class="state-msg">Cargando…</td></tr>
+            <tr><td colspan="7" class="state-msg">Cargando…</td></tr>
           </tbody>
         </table>
       </div>
@@ -263,9 +304,57 @@ async function renderUsers() {
     const t = e.target;
 
     if (t.dataset.action === 'role') {
-      const newRole = t.value;
-      await safeUpdate(t.dataset.uid, { role: newRole || null },
-        `Rol → ${ROLE_LABEL[newRole] || '—'}`);
+      const newRole  = t.value;
+      const prevRole = t.dataset.prev || '';
+
+      if (newRole === 'donador') {
+        const dateStr = await showDateModal({
+          title:    'Asignar Donador',
+          subtitle: 'Indica cuándo realizó la aportación. Los privilegios durarán 30 días a partir de esa fecha.',
+        });
+        if (!dateStr) { t.value = prevRole; return; }
+        const donDate  = new Date(dateStr + 'T12:00:00');
+        const expires  = new Date(donDate);
+        expires.setMonth(expires.getMonth() + 1);
+        await safeUpdate(t.dataset.uid, {
+          role: 'donador',
+          donadorExpiresAt: expires,
+          donadorSince:     donDate,
+        }, `Donador asignado · Expira ${expires.toLocaleDateString('es')}`);
+        t.dataset.prev = 'donador';
+
+      } else if (newRole === 'premium') {
+        const dateStr = await showDateModal({
+          title:    'Asignar Premium',
+          subtitle: 'Indica la fecha de inicio de la suscripción. Los privilegios durarán 30 días y pueden renovarse.',
+        });
+        if (!dateStr) { t.value = prevRole; return; }
+        const startDate = new Date(dateStr + 'T12:00:00');
+        const expires   = new Date(startDate);
+        expires.setMonth(expires.getMonth() + 1);
+        await safeUpdate(t.dataset.uid, {
+          role:             'premium',
+          isPremium:        true,
+          premiumExpiresAt: expires,
+          premiumSince:     startDate,
+        }, `Premium asignado · Expira ${expires.toLocaleDateString('es')}`);
+        t.dataset.prev = 'premium';
+
+      } else {
+        // Quitar rol especial → limpiar campos de expiración
+        const updateData = { role: newRole || deleteField() };
+        if (prevRole === 'donador') {
+          updateData.donadorExpiresAt = deleteField();
+          updateData.donadorSince     = deleteField();
+        }
+        if (prevRole === 'premium') {
+          updateData.isPremium        = false;
+          updateData.premiumExpiresAt = deleteField();
+          updateData.premiumSince     = deleteField();
+        }
+        await safeUpdate(t.dataset.uid, updateData, `Rol → ${ROLE_LABEL[newRole] || '—'}`);
+        t.dataset.prev = newRole;
+      }
     }
 
     if (t.dataset.action === 'premium') {
@@ -292,7 +381,7 @@ async function fetchUsers() {
   const pager = document.getElementById('users-pager');
   if (!tbody) return;
 
-  tbody.innerHTML = '<tr><td colspan="6" class="state-msg">Cargando…</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="7" class="state-msg">Cargando…</td></tr>';
 
   try {
     let q;
@@ -315,7 +404,7 @@ async function fetchUsers() {
     const snap = await getDocs(q);
 
     if (snap.empty) {
-      tbody.innerHTML = '<tr><td colspan="6" class="state-msg">No se encontraron usuarios.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="7" class="state-msg">No se encontraron usuarios.</td></tr>';
       if (pager) pager.innerHTML = '';
       return;
     }
@@ -334,7 +423,7 @@ async function fetchUsers() {
 
   } catch (err) {
     console.error(err);
-    tbody.innerHTML = `<tr><td colspan="6" class="state-msg" style="color:var(--danger)">
+    tbody.innerHTML = `<tr><td colspan="7" class="state-msg" style="color:var(--danger)">
       Error al cargar: ${esc(err.message)}</td></tr>`;
   }
 }
@@ -380,6 +469,25 @@ function userRow(u) {
     `<option value="${r}" ${r === role ? 'selected' : ''}>${esc(ROLE_LABEL[r])}</option>`
   ).join('');
 
+  // Expiración para donador / premium
+  const now = new Date();
+  let expiryHtml = '<span style="color:var(--muted)">—</span>';
+
+  const expiryDate = role === 'donador'
+    ? u.donadorExpiresAt?.toDate?.()
+    : (role === 'premium' || u.isPremium)
+      ? u.premiumExpiresAt?.toDate?.()
+      : null;
+
+  if (expiryDate) {
+    const expired = expiryDate < now;
+    const soon    = !expired && (expiryDate - now) < 7 * 86400000;
+    const color   = expired ? 'var(--danger)' : soon ? 'var(--warning)' : 'var(--success)';
+    const label   = expired ? '⚠ Expirado'
+      : expiryDate.toLocaleDateString('es', { day: '2-digit', month: '2-digit', year: '2-digit' });
+    expiryHtml = `<span style="color:${color};font-size:12px;font-weight:500">${label}</span>`;
+  }
+
   return `
     <tr>
       <td>
@@ -392,7 +500,7 @@ function userRow(u) {
         </div>
       </td>
       <td>
-        <select class="role-select" data-action="role" data-uid="${u.id}">${opts}</select>
+        <select class="role-select" data-action="role" data-uid="${u.id}" data-prev="${role}">${opts}</select>
       </td>
       <td>
         <label class="toggle">
@@ -407,6 +515,7 @@ function userRow(u) {
         </label>
       </td>
       <td><span class="coins">✦ ${coins}</span></td>
+      <td>${expiryHtml}</td>
       <td style="color:var(--muted);font-size:12px">${seen}</td>
     </tr>
   `;
