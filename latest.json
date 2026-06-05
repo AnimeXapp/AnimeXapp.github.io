@@ -1,8 +1,8 @@
 {
-    "version": "1.9.1",
-    "build_number": 15,
-    "url": "animex-1.9.1.apk",
-    "release_notes": "Novedades de la versión 1.9.1:\n\n🗳️ Encuestas en posts del Centro\n• El admin puede agregar encuestas a cualquier post\n• Vota una vez y ve los resultados en tiempo real con barras animadas\n\n🎫 Sistema de Soporte renovado\n• Los reportes y sugerencias ahora son posts públicos en la sección Soporte\n• Todos los usuarios pueden ver y comentar tickets activos\n• Una vez resuelto, los comentarios se bloquean automáticamente\n\n🏷️ Badges de rol/nivel correctos\n• Cada post del Centro muestra el rol real del autor (Admin, Mod, Staff, VIP…)\n• Los usuarios normales muestran su nivel (Nv. X)\n\n🐛 Correcciones\n• Texto de las cards de anime ya no se desborda hacia abajo\n• Tab bar del detalle de anime ya no se sale de la pantalla\n• Avatar real del autor en posts y comentarios del Centro",
-    "released_at": "2026-05-20",
+    "version": "1.10.0",
+    "build_number": 16,
+    "url": "animex-1.10.0.apk",
+    "release_notes": "Novedades de la versión 1.10.0:\n\n🔔 Notificaciones push de nuevos episodios\n• Cuando marcas un anime en Favoritos, recibirás un push cuando salga un nuevo capítulo — aunque tengas la app cerrada\n• Toca la notificación y vas directo al detalle del anime\n\n📚 Sección Manhwa\n• Catálogo nuevo con cientos de manhwas, mangas y manhuas\n• Filtros por tipo, estado, géneros y fuente (Olympus / Nexus)\n• Lector vertical con navegación entre capítulos\n• Solo accesible para usuarios con rol asignado\n\n👤 Roles renovados\n• Donador, Premium, VIP, Staff, Mod y Admin tienen badges propios en chat y perfil\n• Premium ahora desbloquea Manhwa +18, HentaiLA, 8 descargas en paralelo y emojis exclusivos\n• Donador: 5 descargas + acceso a Manhwa\n\n☕ Apoya el proyecto\n• Nueva pantalla de donaciones con beneficios claros\n• Banner en home y card destacada en perfil para usuarios sin Premium\n• AnimeX vive 100% de donaciones — sin ads, sin paywall\n\n📺 Reproductor\n• Botón central para abrir el detalle del anime sin perder tu progreso\n• AniSkip ahora funciona OFFLINE en episodios descargados\n\n⬇️ Descargas más estables\n• Arquitectura nueva: las descargas corren en un servicio de Android, no en la app\n• Siguen funcionando con la app cerrada o el teléfono bloqueado\n• Toast bonito al iniciar una descarga con auto-cierre\n\n🧹 Limpieza\n• Eliminamos Comunidades y Centro AnimeX (sin uso)\n• App más liviana (~2 MB menos)\n• Navegación simplificada: Inicio · Horarios · Perfil",
+    "released_at": "2026-06-04",
     "required": false
 }
