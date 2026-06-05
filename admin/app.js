@@ -127,13 +127,22 @@ document.getElementById('login-form').addEventListener('submit', async e => {
   btn.disabled    = true;
   btn.textContent = 'Iniciando…';
   hideLoginError();
+
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject({ code: 'auth/timeout' }), 12000)
+  );
+
   try {
-    await signInWithEmailAndPassword(
-      auth,
-      document.getElementById('inp-email').value.trim(),
-      document.getElementById('inp-password').value,
-    );
+    await Promise.race([
+      signInWithEmailAndPassword(
+        auth,
+        document.getElementById('inp-email').value.trim(),
+        document.getElementById('inp-password').value,
+      ),
+      timeout,
+    ]);
   } catch (err) {
+    console.error('[Login error]', err);
     btn.disabled    = false;
     btn.textContent = 'Iniciar sesión';
     showLoginError(friendlyAuthError(err.code));
@@ -172,14 +181,16 @@ function hideLoginError() { document.getElementById('login-error').hidden = true
 
 function friendlyAuthError(code) {
   const map = {
-    'auth/invalid-email':      'Email inválido.',
-    'auth/user-not-found':     'Usuario no encontrado.',
-    'auth/wrong-password':     'Contraseña incorrecta.',
-    'auth/too-many-requests':  'Demasiados intentos. Intenta más tarde.',
-    'auth/invalid-credential': 'Email o contraseña incorrectos.',
-    'auth/network-request-failed': 'Sin conexión. Revisa tu red.',
+    'auth/invalid-email':         'Email inválido.',
+    'auth/user-not-found':        'Usuario no encontrado.',
+    'auth/wrong-password':        'Contraseña incorrecta.',
+    'auth/too-many-requests':     'Demasiados intentos. Intenta más tarde.',
+    'auth/invalid-credential':    'Email o contraseña incorrectos.',
+    'auth/network-request-failed':'Sin conexión. Revisa tu red.',
+    'auth/unauthorized-domain':   'Dominio no autorizado. Agrega este dominio en Firebase Console → Authentication → Authorized domains.',
+    'auth/timeout':               'El servidor tardó demasiado. Verifica que el dominio esté autorizado en Firebase Auth.',
   };
-  return map[code] || `Error (${code})`;
+  return map[code] || `Error inesperado (${code ?? 'desconocido'})`;
 }
 
 // ════════════════════════════════════════════════════════════════
