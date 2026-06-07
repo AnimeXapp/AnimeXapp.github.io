@@ -1,8 +1,8 @@
 {
-    "version": "1.10.2",
-    "build_number": 2019,
-    "url": "animex-1.10.2.apk",
-    "release_notes": "Novedades de la versión 1.10.2:\n\n🔔 Notificaciones de nuevos episodios\n• Se corrigió el sistema de push notifications — ahora sí recibirás alertas cuando salga un nuevo episodio de tus favoritos\n\n🛠️ Correcciones\n• 'Acerca de' ahora muestra la versión real de la app en lugar de un número hardcodeado",
+    "version": "1.10.3",
+    "build_number": 2020,
+    "url": "animex-1.10.3.apk",
+    "release_notes": "Novedades de la versión 1.10.3:\n\n🔔 Notificaciones push reparadas (definitivo)\n• Corregido el motivo real por el que los pushes de nuevos episodios no llegaban al sistema: el canal de notificación 'animex_default' nunca fue registrado en Android, por lo que el sistema operativo los descartaba silenciosamente\n• A partir de esta versión, las notificaciones de nuevos episodios de tus favoritos llegarán correctamente aunque la app esté cerrada\n• Los canales 'Anuncios' y 'Nuevos episodios' ahora se pueden configurar por separado desde Ajustes → Notificaciones → AnimeX\n\n✂️ AniSkip mejorado\n• El reproductor ya no muestra 'Omitir intro/ending' ni 'Episodio siguiente' con datos incorrectos de AniSkip\n• Sistema propio de skip times: el admin puede ajustar los tiempos exactos desde el panel web",
     "released_at": "2026-06-07",
     "required": false
 }
