@@ -1,7 +1,7 @@
 {
     "version": "1.10.2",
     "build_number": 2019,
-    "url": "releases/animex-1.10.2.apk",
+    "url": "animex-1.10.2.apk",
     "release_notes": "Novedades de la versión 1.10.2:\n\n🔔 Notificaciones de nuevos episodios\n• Se corrigió el sistema de push notifications — ahora sí recibirás alertas cuando salga un nuevo episodio de tus favoritos\n\n🛠️ Correcciones\n• 'Acerca de' ahora muestra la versión real de la app en lugar de un número hardcodeado",
     "released_at": "2026-06-07",
     "required": false
