@@ -1,8 +1,8 @@
 {
-    "version": "1.10.1",
-    "build_number": 17,
-    "url": "animex-1.10.1.apk",
-    "release_notes": "Novedades de la versión 1.10.1:\n\n🎨 Rediseño visual de portadas\n• El título y la puntuación ahora se muestran sobre la imagen con un difuminado elegante\n• Aplica en home, búsqueda, Tendencias, Recomendados y Manhwa\n• Sombras de colores únicos por cada portada en el home\n\n🔄 Actualizaciones automáticas\n• El splash ahora verifica si hay nueva versión al iniciar\n• Si hay update disponible, el modal aparece automáticamente al entrar al home\n• Podés posponer hasta 3 veces — al 4° inicio la app requiere actualizar para continuar\n• El modal de novedades ahora tiene scroll para leer todo el contenido\n\n🐛 Correcciones\n• Buscador: las portadas ya no aparecen estiradas\n• Espaciado correcto entre cards en todas las grillas",
+    "version": "1.10.2",
+    "build_number": 2019,
+    "url": "releases/animex-1.10.2.apk",
+    "release_notes": "Novedades de la versión 1.10.2:\n\n🔔 Notificaciones de nuevos episodios\n• Se corrigió el sistema de push notifications — ahora sí recibirás alertas cuando salga un nuevo episodio de tus favoritos\n\n🛠️ Correcciones\n• 'Acerca de' ahora muestra la versión real de la app en lugar de un número hardcodeado",
     "released_at": "2026-06-07",
     "required": false
 }
