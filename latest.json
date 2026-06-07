@@ -1,8 +1,8 @@
 {
-    "version": "1.10.0",
-    "build_number": 16,
-    "url": "animex-1.10.0.apk",
-    "release_notes": "Novedades de la versión 1.10.0:\n\n🔔 Notificaciones push de nuevos episodios\n• Cuando marcas un anime en Favoritos, recibirás un push cuando salga un nuevo capítulo — aunque tengas la app cerrada\n• Toca la notificación y vas directo al detalle del anime\n\n📚 Sección Manhwa\n• Catálogo nuevo con cientos de manhwas, mangas y manhuas\n• Filtros por tipo, estado, géneros y fuente (Olympus / Nexus)\n• Lector vertical con navegación entre capítulos\n• Solo accesible para usuarios con rol asignado\n\n👤 Roles renovados\n• Donador, Premium, VIP, Staff, Mod y Admin tienen badges propios en chat y perfil\n• Premium ahora desbloquea Manhwa +18, HentaiLA, 8 descargas en paralelo y emojis exclusivos\n• Donador: 5 descargas + acceso a Manhwa\n\n☕ Apoya el proyecto\n• Nueva pantalla de donaciones con beneficios claros\n• Banner en home y card destacada en perfil para usuarios sin Premium\n• AnimeX vive 100% de donaciones — sin ads, sin paywall\n\n📺 Reproductor\n• Botón central para abrir el detalle del anime sin perder tu progreso\n• AniSkip ahora funciona OFFLINE en episodios descargados\n\n⬇️ Descargas más estables\n• Arquitectura nueva: las descargas corren en un servicio de Android, no en la app\n• Siguen funcionando con la app cerrada o el teléfono bloqueado\n• Toast bonito al iniciar una descarga con auto-cierre\n\n🧹 Limpieza\n• Eliminamos Comunidades y Centro AnimeX (sin uso)\n• App más liviana (~2 MB menos)\n• Navegación simplificada: Inicio · Horarios · Perfil",
-    "released_at": "2026-06-04",
+    "version": "1.10.1",
+    "build_number": 17,
+    "url": "animex-1.10.1.apk",
+    "release_notes": "Novedades de la versión 1.10.1:\n\n🎨 Rediseño visual de portadas\n• El título y la puntuación ahora se muestran sobre la imagen con un difuminado elegante\n• Aplica en home, búsqueda, Tendencias, Recomendados y Manhwa\n• Sombras de colores únicos por cada portada en el home\n\n🔄 Actualizaciones automáticas\n• El splash ahora verifica si hay nueva versión al iniciar\n• Si hay update disponible, el modal aparece automáticamente al entrar al home\n• Podés posponer hasta 3 veces — al 4° inicio la app requiere actualizar para continuar\n• El modal de novedades ahora tiene scroll para leer todo el contenido\n\n🐛 Correcciones\n• Buscador: las portadas ya no aparecen estiradas\n• Espaciado correcto entre cards en todas las grillas",
+    "released_at": "2026-06-07",
     "required": false
 }
